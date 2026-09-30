@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-navy-50 text-navy-900 font-sans antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-navy-200 rounded-lg shadow-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2 bg-accent
+           text-white font-medium rounded-md hover:bg-accent-hover
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-4 py-2 bg-white
+           border border-navy-300 text-navy-700 font-medium rounded-md
+           hover:bg-navy-50 transition-colors;
+  }
+  .stat-label {
+    @apply text-xs font-medium uppercase tracking-wider text-navy-500;
+  }
+  .stat-value {
+    @apply text-2xl font-semibold text-navy-900;
+  }
+  .evidence-row {
+    @apply flex items-start gap-2 py-1.5 text-sm;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { @apply bg-navy-100; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { @apply bg-navy-300 rounded; }
+}
